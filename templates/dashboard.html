@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sentiment Dashboard</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- Plugin Datalabels -->
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+        <style>
+        /* Base Settings */
+        html, body { 
+        background-color: #f0f2f5; /* พื้นหลังเทาฟ้าจางๆ ให้ดูมีมิติขึ้น */
+        font-family: 'Sarabun', sans-serif; 
+        height: 100%; 
+        overflow: hidden; 
+        color: #2c3e50;
+        }
+
+        .dashboard-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        }
+
+        .header-section {
+        flex-shrink: 0; 
+        }
+
+        .content-area {
+        flex-grow: 1;
+        min-height: 0; 
+        margin-top: 15px;
+        overflow: hidden;
+        }
+
+        /* Filter Section */
+        .filter-section { 
+        background-color: #ffffff; 
+        border-radius: 16px; 
+        padding: 12px; 
+        margin-bottom: 10px; 
+        box-shadow: 0 2px 10px rgba(0,0,0,0.03); 
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: center; 
+        }
+
+        .card-sentiment { 
+        border: none; 
+        border-radius: 16px; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        background: white;
+        }
+
+        .chart-container-pie {
+        position: relative;
+        height: 220px; 
+        width: 100%;
+        }
+        .chart-container-bar {
+        position: relative;
+        height: 140px; 
+        width: 100%;
+        }
+
+        .col-scrollable {
+        height: 100%;
+        overflow-y: auto; 
+        padding-right: 5px; 
+        }
+
+        .col-scrollable::-webkit-scrollbar { width: 6px; }
+        .col-scrollable::-webkit-scrollbar-track { background: transparent; }
+        .col-scrollable::-webkit-scrollbar-thumb { background: #b0bec5; border-radius: 10px; }
+
+        /* ปุ่ม Toggle Custom (Updated Colors) */
+        .platform-btn-group .btn {
+        border-radius: 50px;
+        margin-right: 8px;
+        padding: 6px 18px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        border: 1px solid #cfd8dc;
+        color: #546e7a;
+        background-color: white;
+        transition: all 0.2s;
+        }
+        .platform-btn-group .btn:hover {
+        background-color: #eceff1;
+        color: #37474f;
+        }
+        .platform-btn-group .btn.active {
+        background-color: #42a5f5; /* ฟ้าสดใสขึ้น */
+        color: white;
+        border-color: #42a5f5;
+        box-shadow: 0 2px 6px rgba(66, 165, 245, 0.3);
+        }
+
+        .badge-count {
+        background-color: rgba(0,0,0,0.1);
+        color: inherit;
+        border-radius: 12px;
+        padding: 2px 8px;
+        font-size: 0.75em;
+        margin-left: 6px;
+        }
+        .btn.active .badge-count {
+        background-color: rgba(255,255,255,0.25);
+        color: white;
+        }
+
+        #loadingOverlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(255,255,255,0.8);
+        z-index: 1000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(4px);
+        }
+
+        @media (max-width: 992px) {
+        html, body { height: auto; overflow: auto; }
+        .dashboard-container { height: auto; display: block; }
+        .content-area { height: auto; }
+        .col-scrollable { height: auto; overflow: visible; }
+        .chart-container-pie { height: 280px; }
+        }
+
+        /* --- Vivid Pastel Table Styles --- */
+        .table-custom { font-size: 0.9rem; }
+        .table-custom thead th {
+        background-color: #f1f8e9; /* เขียวอ่อนจางๆ ที่หัวตาราง */
+        color: #33691e;
+        font-weight: 600;
+        border-bottom: 2px solid #dcedc8;
+        border-right: 1px solid #dcedc8; /* เพิ่มเส้นแบ่งแนวตั้งที่หัวตาราง */
+        padding-top: 12px;
+        padding-bottom: 12px;
+        }
+        .table-custom tbody td {
+        vertical-align: middle;
+        border-bottom: 1px solid #f0f0f0;
+        border-right: 1px solid #f0f0f0; /* เพิ่มเส้นแบ่งแนวตั้งที่ข้อมูล */
+        padding: 10px 8px;
+        }
+        /* ลบเส้นแบ่งแนวตั้งช่องสุดท้าย */
+        .table-custom thead th:last-child,
+        .table-custom tbody td:last-child {
+        border-right: none;
+        }
+
+        .comment-row:hover { background-color: #fffde7; } /* เหลืองจางๆ ตอน Hover */
+
+        /* Badges ปรับสีให้สดขึ้น (Vibrant Pastel) */
+        .badge-pastel {
+        font-size: 0.8em;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-weight: 600;
+        display: inline-block;
+        min-width: 60px;
+        text-align: center;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        /* เขียว: สดขึ้น */
+        .badge-pos { background-color: #a5d6a7; color: #1b5e20; border: 1px solid #81c784; } 
+        /* แดง: สดขึ้น */
+        .badge-neg { background-color: #ef9a9a; color: #b71c1c; border: 1px solid #e57373; } 
+        /* เหลือง: สดขึ้น */
+        .badge-neu { background-color: #ffe082; color: #f57f17; border: 1px solid #ffd54f; } 
+
+        .badge-empty { color: #e0e0e0; font-size: 1.2em; font-weight: 300; } 
+
+        .text-review {
+        color: #424242;
+        line-height: 1.5;
+        }
+
+        /* Logo Area */
+        .logo-container {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        padding: 6px 18px;
+        border-radius: 50px;
+        border: 1px solid #eaeaea;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container-fluid dashboard-container position-relative">
+
+            <div id="loadingOverlay">
+                <div class="spinner-border text-secondary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+
+            <!-- Header Section -->
+            <div class="header-section">
+                <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+
+                    <!-- Left: Logo + Title -->
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="logo-container me-1">
+                            <img src="/static/logo.jpg" alt="reviewradar_logo" alt="logo" style="height: 40px;">
+                        </div>
+                        <div class="border-start h-100 mx-1" style="height: 25px; border-color: #ddd;"></div>
+                        <div>
+                            <h5 class="fw-bold text-dark mb-0">Dashboard</h5>
+                            <div class="text-muted small">Brand: <span class="fw-bold text-danger">Suki 42</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Navigation -->
+                    <div class="d-flex bg-white p-1 rounded-pill border shadow-sm">
+                        <button class="btn btn-primary btn-sm rounded-pill px-3 text-decoration-none" onclick="switchView('dashboard')" id="btn-view-dashboard">
+                            <i class="fas fa-chart-pie me-1"></i> กราฟ
+                        </button>
+                        <button class="btn btn-link text-decoration-none text-secondary btn-sm rounded-pill px-3" onclick="switchView('comments')" id="btn-view-comments">
+                            <i class="fas fa-table me-1"></i> ตารางข้อมูล
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filter Bar -->
+                <div class="filter-section">
+                    <div class="platform-btn-group d-flex flex-wrap justify-content-center" id="platformGroup">
+                        <button type="button" class="btn active" onclick="selectPlatform('all', this)">
+                            All Platforms <span id="count-all" class="badge-count">...</span>
+                        </button>
+                        <button type="button" class="btn" onclick="selectPlatform('youtube', this)">
+                            <i class="fab fa-youtube text-danger opacity-75"></i> YouTube <span id="count-youtube" class="badge-count">...</span>
+                        </button>
+                        <button type="button" class="btn" onclick="selectPlatform('tiktok', this)">
+                            <i class="fab fa-tiktok text-dark opacity-75"></i> TikTok <span id="count-tiktok" class="badge-count">...</span>
+                        </button>
+                        <button type="button" class="btn" onclick="selectPlatform('google', this)">
+                            <i class="fab fa-google text-primary opacity-75"></i> Maps <span id="count-google" class="badge-count">...</span>
+                        </button>
+                    </div>
+
+                    <div class="d-none d-md-block border-start mx-3" style="height: 25px;"></div>
+
+                    <div class="d-flex gap-2 align-items-center bg-light px-3 py-1 rounded-pill border">
+                        <i class="far fa-calendar-alt text-secondary"></i>
+                        <input type="date" id="startDate" class="form-control form-control-sm border-0 bg-transparent" style="width: 135px; font-size: 0.9rem;" onchange="renderCurrentView()">
+                        <span class="align-self-center text-muted" style="font-size: 0.8rem;">to</span>
+                        <input type="date" id="endDate" class="form-control form-control-sm border-0 bg-transparent" style="width: 135px; font-size: 0.9rem;" onchange="renderCurrentView()">
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW 1: DASHBOARD -->
+            <div id="view-dashboard" class="row content-area g-3">
+                <!-- Left: Overall Pie -->
+                <div class="col-lg-4 h-100">
+                    <div class="card card-sentiment h-100">
+                        <div class="card-body d-flex flex-column justify-content-center col-scrollable">
+                            <h5 class="fw-bold text-center mb-3 text-dark">Overall Sentiment</h5>
+                            <div class="chart-container-pie mb-3 d-flex justify-content-center">
+                                <canvas id="overallChart"></canvas>
+                            </div>
+                            <div class="mt-2 p-3 rounded-3" style="background-color: #f1f8e9;"> <!-- พื้นหลังเขียวอ่อนจางๆ -->
+                                <div class="d-flex flex-column gap-2" id="overallStats"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Aspects Bar -->
+                <div class="col-lg-8 h-100">
+                    <div class="col-scrollable">
+                        <div class="d-flex align-items-center mb-3">
+                            <h6 class="fw-bold text-secondary mb-0 ps-2" style="border-left: 4px solid #66bb6a;">Aspect Breakdown</h6>
+                        </div>
+                        <div id="aspectGrid" class="row g-3 pb-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW 2: COMMENTS LIST (Matrix with Filters) -->
+            <div id="view-comments" class="content-area d-none">
+                <div class="card card-sentiment h-100 border-0">
+                    <div class="card-header bg-white py-3 border-bottom-0">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                            <h5 class="mb-0 fw-bold text-dark"><i class="fas fa-list-alt me-2 text-primary"></i>Review Matrix</h5>
+
+                            <div class="d-flex gap-2 align-items-center flex-wrap">
+                                <!-- Aspect Filter (Brought Back) -->
+                                <div class="d-flex align-items-center bg-light px-3 py-1 rounded-pill border">
+                                    <span class="small text-secondary fw-bold me-2">Aspect:</span>
+                                    <select id="aspectFilter" class="form-select form-select-sm border-0 bg-transparent p-0" style="width: auto; box-shadow: none; cursor: pointer; color: #1976d2; font-weight: 500;" onchange="renderCommentsList()">
+                                        <option value="all">All Aspects</option>
+                                        <option value="Taste">Taste (รสชาติ)</option>
+                                        <option value="Price">Price (ราคา)</option>
+                                        <option value="Service">Service (บริการ)</option>
+                                        <option value="Atmosphere">Atmosphere (บรรยากาศ)</option>
+                                        <option value="Accessibility">Accessibility (การเข้าถึง)</option>
+                                    </select>
+                                </div>
+
+                                <!-- Sentiment Filter -->
+                                <div class="d-flex align-items-center bg-light px-4 py-1 rounded-pill border">
+                                    <span class="small text-secondary fw-bold me-2">Sentiment:</span>
+                                    <select id="sentimentFilter" class="form-select form-select-sm border-0 bg-transparent ps-0 pe-5" style="width: auto; box-shadow: none; cursor: pointer; color: #1976d2; font-weight: 500;" onchange="renderCommentsList()">
+                                        <option value="all">All Sentiments</option>
+                                        <option value="pos">Positive</option>
+                                        <option value="neg">Negative</option>
+                                        <option value="neu">Neutral</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body col-scrollable p-0">
+                        <table class="table table-custom table-hover align-middle mb-0 w-100">
+                            <thead class="sticky-top shadow-sm">
+                                <tr>
+                                    <th scope="col" style="width: 10%" class="ps-4">Date</th>
+                                    <th scope="col" style="width: 8%">Source</th>
+                                    <th scope="col" style="width: 37%">Review</th>
+                                    <!-- Aspect Columns -->
+                                    <th scope="col" style="width: 9%" class="text-center">Taste</th>
+                                    <th scope="col" style="width: 9%" class="text-center">Price</th>
+                                    <th scope="col" style="width: 9%" class="text-center">Service</th>
+                                    <th scope="col" style="width: 9%" class="text-center">Atmos</th>
+                                    <th scope="col" style="width: 9%" class="text-center">Access</th>
+                                </tr>
+                            </thead>
+                            <tbody id="commentsTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="/static/js/dashboard.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    </body>
+</html>

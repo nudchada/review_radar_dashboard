@@ -1,0 +1,31 @@
+# --- Python ---
+# ละเว้นโฟลเดอร์ Virtual Environment
+venv/
+.venv/
+env/
+bin/
+include/
+lib/
+share/
+
+# ละเว้นไฟล์ที่สร้างจากการรัน Python (Cache)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- FastAPI / Environment ---
+# ละเว้นไฟล์เก็บความลับ (ถ้ามี)
+.env
+
+# --- OS Specific ---
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+desktop.ini
+
+# --- Editors ---
+# VS Code
+.vscode/
+# PyCharm
+.idea/
