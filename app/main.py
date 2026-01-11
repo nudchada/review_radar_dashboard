@@ -8,6 +8,7 @@ import os
 import json
 import random
 from datetime import datetime
+from collections import defaultdict
 
 app = FastAPI(
     title="ReviewRadar API",
@@ -160,11 +161,46 @@ async def get_batch_metrics(
     to_date: Optional[str] = None
 ):
     platform_list = platforms.split(",") if platforms else []
-    metrics_data = load_mock_json("metrics.json")
-    if not metrics_data:
-        metrics_data = {
-            "platform_counts": {}, "overall_sentiment": {"positive":0,"negative":0,"neutral":0}, "aspect_metrics": {}
-        }
+    
+    # 1. โหลด Raw Data จาก reviews.json (แทน metrics.json)
+    all_reviews = load_mock_json("reviews.json")
+    if not all_reviews:
+        all_reviews = []
+
+    # 2. คำนวณ Platform Counts (Global Stats)
+    # นับรีวิวทั้งหมดที่มีอยู่จริง เพื่อโชว์ตัวเลขบนปุ่มกด (เช่น YouTube 10, TikTok 50)
+    p_counts = defaultdict(int)
+    for r in all_reviews:
+        p_name = r.get("source_platform", "unknown").lower()
+        p_counts[p_name] += 1
+
+    # 3. Filter Data (กรองข้อมูลตามปุ่มที่กด)
+    filtered_reviews = all_reviews
+    
+    # ถ้ามีการส่ง platforms มา (เช่น ?platforms=youtube) ให้คัดเฉพาะอันนั้น
+    if platform_list and 'all' not in [p.lower() for p in platform_list]:
+        target_platform = platform_list[0].lower()
+        filtered_reviews = [r for r in filtered_reviews if r.get("source_platform", "").lower() == target_platform]
+
+    # 4. Aggregation (คำนวณกราฟจากข้อมูลที่กรองแล้ว)
+    overall_sent = {"positive": 0, "negative": 0, "neutral": 0}
+    # ใช้ defaultdict เพื่อให้ไม่ต้องเช็ค key ก่อนบวก
+    aspect_mets = defaultdict(lambda: {"positive": 0, "negative": 0, "neutral": 0})
+
+    for r in filtered_reviews:
+        results = r.get("results", {})
+        for aspect, detail in results.items():
+            # ดึง sentiment จาก JSON (positive, negative, neutral)
+            sentiment = detail.get("sentiment", "neutral")
+            
+            # นับเข้า Overall Chart
+            if sentiment in overall_sent:
+                overall_sent[sentiment] += 1
+            
+            # นับเข้า Aspect Chart (แปลงชื่อเป็นตัวใหญ่ เช่น taste -> TASTE)
+            aspect_key = aspect.upper()
+            if sentiment in ["positive", "negative", "neutral"]:
+                aspect_mets[aspect_key][sentiment] += 1
 
     return {
         "meta": {
@@ -173,7 +209,11 @@ async def get_batch_metrics(
                 "date_range": {"start": from_date, "end": to_date}
             }
         },
-        "data": metrics_data
+        "data": {
+            "platform_counts": dict(p_counts),     # ส่งค่าที่นับจริง
+            "overall_sentiment": overall_sent,     # ส่งค่าที่นับจริง
+            "aspect_metrics": dict(aspect_mets)    # ส่งค่าที่นับจริง
+        }
     }
 
 # --- 1.2 GET Reviews ---
