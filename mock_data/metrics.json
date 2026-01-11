@@ -1,0 +1,22 @@
+{
+  "platform_counts": {
+    "youtube": 1204,
+    "facebook": 724,
+    "instagram": 300,
+    "tiktok": 2500,
+    "google": 600,
+    "shopee": 500
+  },
+  "overall_sentiment": {
+    "positive": 1024,
+    "negative": 290,
+    "neutral": 105
+  },
+  "aspect_metrics": {
+    "TASTE": { "positive": 80, "negative": 10, "neutral": 1 },
+    "PRICE": { "positive": 60, "negative": 20, "neutral": 0 },
+    "SERVICE": { "positive": 90, "negative": 5, "neutral": 1 },
+    "ATMOSPHERE": { "positive": 8, "negative": 0, "neutral": 2 },
+    "ACCESSIBILITY": { "positive": 4, "negative": 0, "neutral": 1 }
+  }
+}

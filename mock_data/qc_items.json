@@ -1,0 +1,542 @@
+[
+  {
+    "qc_item_id": 5001,
+    "review_id": 1001,
+    "review_content": "ซื้อให้แม่ แม่ชอบกลิ่นมากแต่บอกว่าขวดเล็กไปหน่อย",
+    "aspect": "price",
+    "predicted_sentiment": "neutral",
+    "confidence": 0.50,
+    "sentiment_gap": 0.12,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5002,
+    "review_id": 1001,
+    "review_content": "ซื้อให้แม่ แม่ชอบกลิ่นมากแต่บอกว่าขวดเล็กไปหน่อย",
+    "aspect": "quantity",
+    "predicted_sentiment": "negative",
+    "confidence": 0.75,
+    "sentiment_gap": 0.20,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5003,
+    "review_id": 1002,
+    "review_content": "ส่งของแย่มาก กล่องบุบหมดเลย แต่สินค้าข้างในไม่เสียหาย",
+    "aspect": "service",
+    "predicted_sentiment": "negative",
+    "confidence": 0.99,
+    "sentiment_gap": 0.85,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5004,
+    "review_id": 1004,
+    "review_content": "เฉยๆ นะ ไม่ได้ว้าวมาก รสชาติธรรมดาหากินได้ทั่วไป",
+    "aspect": "taste",
+    "predicted_sentiment": "neutral",
+    "confidence": 0.60,
+    "sentiment_gap": 0.15,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5005,
+    "review_id": 1005,
+    "review_content": "แพงไปหน่อยแต่อร่อยจริง บรรยากาศร้านก็ดีถ่ายรูปสวย",
+    "aspect": "price",
+    "predicted_sentiment": "negative",
+    "confidence": 0.70,
+    "sentiment_gap": 0.30,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5006,
+    "review_id": 1007,
+    "review_content": "ที่จอดรถน้อยมาก วนหาครึ่งชั่วโมง หงุดหงิด",
+    "aspect": "accessibility",
+    "predicted_sentiment": "negative",
+    "confidence": 0.98,
+    "sentiment_gap": 0.90,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5007,
+    "review_id": 1009,
+    "review_content": "แอดมินตอบช้ามาก ทักไปตั้งแต่เช้าตอบเย็น",
+    "aspect": "service",
+    "predicted_sentiment": "negative",
+    "confidence": 0.85,
+    "sentiment_gap": 0.40,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5008,
+    "review_id": 1011,
+    "review_content": "สินค้าไม่ตรงปก สีเพี้ยนจากรูปเยอะเลย",
+    "aspect": "quality",
+    "predicted_sentiment": "negative",
+    "confidence": 0.88,
+    "sentiment_gap": 0.50,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5009,
+    "review_id": 1013,
+    "review_content": "ราคาแรงอยู่เด้อออ แต่นานๆ กินทีโอเค",
+    "aspect": "price",
+    "predicted_sentiment": "negative",
+    "confidence": 0.65,
+    "sentiment_gap": 0.10,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5010,
+    "review_id": 1013,
+    "review_content": "ราคาแรงอยู่เด้อออ แต่นานๆ กินทีโอเค",
+    "aspect": "taste",
+    "predicted_sentiment": "positive",
+    "confidence": 0.55,
+    "sentiment_gap": 0.05,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5011,
+    "review_id": 1014,
+    "review_content": "โปรโมชั่นซับซ้อน สรุปไม่ได้ลดจริง",
+    "aspect": "price",
+    "predicted_sentiment": "negative",
+    "confidence": 0.80,
+    "sentiment_gap": 0.35,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5012,
+    "review_id": 1017,
+    "review_content": "ร้านลับที่แท้ทรู ทางเข้าหายากไปนิดแต่อร่อย",
+    "aspect": "accessibility",
+    "predicted_sentiment": "negative",
+    "confidence": 0.70,
+    "sentiment_gap": 0.25,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5013,
+    "review_id": 1023,
+    "review_content": "ราคาถูกแต่ค่าส่งแพง สรุปเท่าเดิม",
+    "aspect": "price",
+    "predicted_sentiment": "neutral",
+    "confidence": 0.60,
+    "sentiment_gap": 0.15,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5014,
+    "review_id": 1024,
+    "review_content": "มีแมลงวันในร้าน ดูไม่ค่อยสะอาดเท่าไหร่",
+    "aspect": "atmosphere",
+    "predicted_sentiment": "negative",
+    "confidence": 0.80,
+    "sentiment_gap": 0.45,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5015,
+    "review_id": 1025,
+    "review_content": "รสชาติมาตรฐาน ไม่แย่แต่ก็ไม่ได้ว้าว",
+    "aspect": "taste",
+    "predicted_sentiment": "neutral",
+    "confidence": 0.70,
+    "sentiment_gap": 0.20,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5016,
+    "review_id": 1026,
+    "review_content": "เมนูหลากหลายดีครับ เหมาะกับพาครอบครัวมา",
+    "aspect": "variety",
+    "predicted_sentiment": "positive",
+    "confidence": 0.85,
+    "sentiment_gap": 0.40,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5017,
+    "review_id": 1027,
+    "review_content": "เพลงเสียงดังไปหน่อย คุยกันไม่ค่อยรู้เรื่อง",
+    "aspect": "atmosphere",
+    "predicted_sentiment": "negative",
+    "confidence": 0.85,
+    "sentiment_gap": 0.50,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5018,
+    "review_id": 1033,
+    "review_content": "ไกลบ้านไปหน่อย ถ้าร้านอยู่ใกล้คงมาบ่อยๆ",
+    "aspect": "accessibility",
+    "predicted_sentiment": "neutral",
+    "confidence": 0.60,
+    "sentiment_gap": 0.10,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5019,
+    "review_id": 1034,
+    "review_content": "วัตถุดิบเกรดพรีเมียม สมราคาครับ",
+    "aspect": "price",
+    "predicted_sentiment": "positive",
+    "confidence": 0.80,
+    "sentiment_gap": 0.35,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5020,
+    "review_id": 1035,
+    "review_content": "สั่งออนไลน์ระบบล่มบ่อยมาก หงุดหงิด",
+    "aspect": "service",
+    "predicted_sentiment": "negative",
+    "confidence": 0.88,
+    "sentiment_gap": 0.55,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5021,
+    "review_id": 1037,
+    "review_content": "ขนส่งทำกล่องบุบ แต่ร้านห่อบับเบิ้ลมาหนา ของเลยรอด",
+    "aspect": "service",
+    "predicted_sentiment": "negative",
+    "confidence": 0.70,
+    "sentiment_gap": 0.25,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5022,
+    "review_id": 1038,
+    "review_content": "เมนูภาษาอังกฤษล้วน อ่านยากสำหรับผู้ใหญ่",
+    "aspect": "accessibility",
+    "predicted_sentiment": "negative",
+    "confidence": 0.80,
+    "sentiment_gap": 0.40,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5023,
+    "review_id": 1039,
+    "review_content": "รสชาติเพี้ยนไปจากเดิม เมื่อก่อนอร่อยกว่านี้",
+    "aspect": "taste",
+    "predicted_sentiment": "negative",
+    "confidence": 0.85,
+    "sentiment_gap": 0.50,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5024,
+    "review_id": 1043,
+    "review_content": "พนักงานไม่สนใจลูกค้าเลย ยืนเล่นโทรศัพท์",
+    "aspect": "service",
+    "predicted_sentiment": "negative",
+    "confidence": 0.92,
+    "sentiment_gap": 0.80,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5025,
+    "review_id": 1044,
+    "review_content": "น้ำซุปเค็มไปนิด แต่เป็ดย่างอร่อย",
+    "aspect": "taste",
+    "predicted_sentiment": "neutral",
+    "confidence": 0.65,
+    "sentiment_gap": 0.18,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5026,
+    "review_id": 1046,
+    "review_content": "ปริมาณน้อยลงแต่ราคาเท่าเดิม เสียความรู้สึก",
+    "aspect": "price",
+    "predicted_sentiment": "negative",
+    "confidence": 0.85,
+    "sentiment_gap": 0.55,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5027,
+    "review_id": 1046,
+    "review_content": "ปริมาณน้อยลงแต่ราคาเท่าเดิม เสียความรู้สึก",
+    "aspect": "quantity",
+    "predicted_sentiment": "negative",
+    "confidence": 0.90,
+    "sentiment_gap": 0.60,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5028,
+    "review_id": 1049,
+    "review_content": "จองโต๊ะไปแล้วแต่ไปถึงไม่มีโต๊ะ งงมาก",
+    "aspect": "service",
+    "predicted_sentiment": "negative",
+    "confidence": 0.98,
+    "sentiment_gap": 0.90,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5029,
+    "review_id": 1053,
+    "review_content": "ตามรีวิวมาครับ ผิดหวังนิดหน่อย รสชาติหวานนำไปเยอะ",
+    "aspect": "taste",
+    "predicted_sentiment": "negative",
+    "confidence": 0.85,
+    "sentiment_gap": 0.40,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5030,
+    "review_id": 1054,
+    "review_content": "ค่าส่งแพงกว่าค่าของอีก ไม่คุ้มเลย",
+    "aspect": "price",
+    "predicted_sentiment": "negative",
+    "confidence": 0.90,
+    "sentiment_gap": 0.60,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5031,
+    "review_id": 1056,
+    "review_content": "โต๊ะแคบไปหน่อย นั่งเบียดกันไม่ค่อยสบาย",
+    "aspect": "atmosphere",
+    "predicted_sentiment": "negative",
+    "confidence": 0.80,
+    "sentiment_gap": 0.35,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5032,
+    "review_id": 1057,
+    "review_content": "ทางลาดสำหรับวีลแชร์ชันมาก เข็นลำบากครับ",
+    "aspect": "accessibility",
+    "predicted_sentiment": "negative",
+    "confidence": 0.92,
+    "sentiment_gap": 0.75,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5033,
+    "review_id": 1061,
+    "review_content": "กาแฟจืดจางมาก เหมือนกินน้ำล้างแก้ว",
+    "aspect": "taste",
+    "predicted_sentiment": "negative",
+    "confidence": 0.95,
+    "sentiment_gap": 0.85,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5034,
+    "review_id": 1064,
+    "review_content": "แอดมินเหวี่ยงมาก ถามดีๆ ตอบกวนประสาท",
+    "aspect": "service",
+    "predicted_sentiment": "negative",
+    "confidence": 0.95,
+    "sentiment_gap": 0.80,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5035,
+    "review_id": 1066,
+    "review_content": "เสียงดังจอแจมาก ไม่เหมาะกับมานั่งทำงาน",
+    "aspect": "atmosphere",
+    "predicted_sentiment": "negative",
+    "confidence": 0.85,
+    "sentiment_gap": 0.45,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5036,
+    "review_id": 1067,
+    "review_content": "ข้าวแข็งไปหน่อย แต่น้ำแกงอร่อยให้อภัยได้",
+    "aspect": "taste",
+    "predicted_sentiment": "neutral",
+    "confidence": 0.65,
+    "sentiment_gap": 0.15,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5037,
+    "review_id": 1070,
+    "review_content": "ร้านหายากนิดนึง ป้ายไม่ชัด ขับเลยไปสองรอบ",
+    "aspect": "accessibility",
+    "predicted_sentiment": "negative",
+    "confidence": 0.85,
+    "sentiment_gap": 0.50,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5038,
+    "review_id": 1074,
+    "review_content": "คุณภาพตามราคา ไม่ได้คาดหวังอะไรมาก ก็โอเค",
+    "aspect": "price",
+    "predicted_sentiment": "neutral",
+    "confidence": 0.70,
+    "sentiment_gap": 0.20,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5039,
+    "review_id": 1074,
+    "review_content": "คุณภาพตามราคา ไม่ได้คาดหวังอะไรมาก ก็โอเค",
+    "aspect": "taste",
+    "predicted_sentiment": "neutral",
+    "confidence": 0.60,
+    "sentiment_gap": 0.10,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5040,
+    "review_id": 1075,
+    "review_content": "ไม่มีที่จอดรถ ต้องไปจอดแปะข้างทาง เสียวโดนล็อคล้อ",
+    "aspect": "accessibility",
+    "predicted_sentiment": "negative",
+    "confidence": 0.90,
+    "sentiment_gap": 0.70,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5041,
+    "review_id": 1076,
+    "review_content": "สเต็กเนื้อเหนียวมาก เคี้ยวจนปวดกราม",
+    "aspect": "taste",
+    "predicted_sentiment": "negative",
+    "confidence": 0.93,
+    "sentiment_gap": 0.85,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5042,
+    "review_id": 1079,
+    "review_content": "ส่งผิดสี ทักแชทไปก็ไม่อ่าน แย่ๆ",
+    "aspect": "service",
+    "predicted_sentiment": "negative",
+    "confidence": 0.95,
+    "sentiment_gap": 0.90,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5043,
+    "review_id": 1081,
+    "review_content": "แอร์ไม่เย็นเลย ร้อนจนเหงื่อแตก กินไปเช็ดเหงื่อไป",
+    "aspect": "atmosphere",
+    "predicted_sentiment": "negative",
+    "confidence": 0.90,
+    "sentiment_gap": 0.75,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5044,
+    "review_id": 1082,
+    "review_content": "ลิฟต์เสีย ต้องเดินขึ้นบันได 3 ชั้น เหนื่อยมาก",
+    "aspect": "accessibility",
+    "predicted_sentiment": "negative",
+    "confidence": 0.95,
+    "sentiment_gap": 0.88,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5045,
+    "review_id": 1083,
+    "review_content": "เสิร์ฟผิดโต๊ะ แล้วยังมาเถียงลูกค้าอีก งง",
+    "aspect": "service",
+    "predicted_sentiment": "negative",
+    "confidence": 0.92,
+    "sentiment_gap": 0.82,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5046,
+    "review_id": 1084,
+    "review_content": "ราคาถือว่ากลางๆ ไม่ถูกไม่แพง รับได้ครับ",
+    "aspect": "price",
+    "predicted_sentiment": "neutral",
+    "confidence": 0.60,
+    "sentiment_gap": 0.12,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5047,
+    "review_id": 1086,
+    "review_content": "เก้าอี้แข็งนั่งไม่สบายเลย ปวดหลัง",
+    "aspect": "atmosphere",
+    "predicted_sentiment": "negative",
+    "confidence": 0.75,
+    "sentiment_gap": 0.30,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5048,
+    "review_id": 1087,
+    "review_content": "ทางเข้าแคบมาก รถสวนกันลำบาก มือใหม่ควรระวัง",
+    "aspect": "accessibility",
+    "predicted_sentiment": "negative",
+    "confidence": 0.88,
+    "sentiment_gap": 0.55,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5049,
+    "review_id": 1091,
+    "review_content": "กลิ่นในร้านเหม็นอับ เหมือนไม่ได้ทำความสะอาด",
+    "aspect": "atmosphere",
+    "predicted_sentiment": "negative",
+    "confidence": 0.92,
+    "sentiment_gap": 0.80,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5050,
+    "review_id": 1092,
+    "review_content": "เรียกพนักงานยากมาก ต้องเดินไปตามเอง",
+    "aspect": "service",
+    "predicted_sentiment": "negative",
+    "confidence": 0.85,
+    "sentiment_gap": 0.50,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5051,
+    "review_id": 1094,
+    "review_content": "สินค้าดูแพงเกินจริง วัสดุก๊องแก๊งมาก",
+    "aspect": "price",
+    "predicted_sentiment": "negative",
+    "confidence": 0.85,
+    "sentiment_gap": 0.45,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5052,
+    "review_id": 1095,
+    "review_content": "รสชาติกลางๆ พอกินได้ ไม่ได้แย่แต่ก็ไม่ซ้ำ",
+    "aspect": "taste",
+    "predicted_sentiment": "neutral",
+    "confidence": 0.60,
+    "sentiment_gap": 0.10,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5053,
+    "review_id": 1096,
+    "review_content": "ห้องน้ำอยู่ไกลมาก ต้องเดินไปหลังร้าน มืดด้วย",
+    "aspect": "accessibility",
+    "predicted_sentiment": "negative",
+    "confidence": 0.85,
+    "sentiment_gap": 0.50,
+    "status": "pending"
+  },
+  {
+    "qc_item_id": 5054,
+    "review_id": 1096,
+    "review_content": "ห้องน้ำอยู่ไกลมาก ต้องเดินไปหลังร้าน มืดด้วย",
+    "aspect": "atmosphere",
+    "predicted_sentiment": "negative",
+    "confidence": 0.70,
+    "sentiment_gap": 0.30,
+    "status": "pending"
+  }
+]

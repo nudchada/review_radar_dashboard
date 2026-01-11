@@ -1,0 +1,915 @@
+[
+  {
+    "review_id": 1001,
+    "source_platform": "shopee",
+    "review_date": "2024-01-15",
+    "content": "ซื้อให้แม่ แม่ชอบกลิ่นมากแต่บอกว่าขวดเล็กไปหน่อย",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.98 },
+      "price": { "sentiment": "neutral", "confidence": 0.50 }
+    }
+  },
+  {
+    "review_id": 1002,
+    "source_platform": "facebook",
+    "review_date": "2024-01-14",
+    "content": "ส่งของแย่มาก กล่องบุบหมดเลย แต่สินค้าข้างในไม่เสียหาย",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.99 }
+    }
+  },
+  {
+    "review_id": 1003,
+    "source_platform": "google",
+    "review_date": "2024-01-10",
+    "content": "คุณภาพดีเยี่ยม! คุ้มราคามากครับ แนะนำเลย",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.92 },
+      "price": { "sentiment": "positive", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1004,
+    "source_platform": "tiktok",
+    "review_date": "2024-01-11",
+    "content": "เฉยๆ นะ ไม่ได้ว้าวมาก รสชาติธรรมดาหากินได้ทั่วไป",
+    "results": {
+      "taste": { "sentiment": "neutral", "confidence": 0.60 }
+    }
+  },
+  {
+    "review_id": 1005,
+    "source_platform": "youtube",
+    "review_date": "2024-01-12",
+    "content": "แพงไปหน่อยแต่อร่อยจริง บรรยากาศร้านก็ดีถ่ายรูปสวย",
+    "results": {
+      "price": { "sentiment": "negative", "confidence": 0.70 },
+      "taste": { "sentiment": "positive", "confidence": 0.95 },
+      "atmosphere": { "sentiment": "positive", "confidence": 0.88 }
+    }
+  },
+  {
+    "review_id": 1006,
+    "source_platform": "shopee",
+    "review_date": "2024-01-16",
+    "content": "จัดส่งรวดเร็วทันใจ แพ็คมาดีมากครับ",
+    "results": {
+      "service": { "sentiment": "positive", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1007,
+    "source_platform": "google",
+    "review_date": "2024-01-16",
+    "content": "ที่จอดรถน้อยมาก วนหาครึ่งชั่วโมง หงุดหงิด",
+    "results": {
+      "accessibility": { "sentiment": "negative", "confidence": 0.98 }
+    }
+  },
+  {
+    "review_id": 1008,
+    "source_platform": "tiktok",
+    "review_date": "2024-01-17",
+    "content": "หมูกรอบคือดีย์!!! แสงออกปากกก 😋✨",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.99 }
+    }
+  },
+  {
+    "review_id": 1009,
+    "source_platform": "facebook",
+    "review_date": "2024-01-18",
+    "content": "แอดมินตอบช้ามาก ทักไปตั้งแต่เช้าตอบเย็น",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.85 }
+    }
+  },
+  {
+    "review_id": 1010,
+    "source_platform": "youtube",
+    "review_date": "2024-01-18",
+    "content": "รีวิวพลีชีพ! ไปลองมาแล้ว ผิดหวังมาก รสชาติเค็มปี๋",
+    "results": {
+      "taste": { "sentiment": "negative", "confidence": 0.92 }
+    }
+  },
+  {
+    "review_id": 1011,
+    "source_platform": "shopee",
+    "review_date": "2024-01-19",
+    "content": "สินค้าไม่ตรงปก สีเพี้ยนจากรูปเยอะเลย",
+    "results": {
+      "taste": { "sentiment": "negative", "confidence": 0.88 }
+    }
+  },
+  {
+    "review_id": 1012,
+    "source_platform": "google",
+    "review_date": "2024-01-20",
+    "content": "บรรยากาศดี เพลงเพราะ เหมาะกับมาเดท",
+    "results": {
+      "atmosphere": { "sentiment": "positive", "confidence": 0.94 }
+    }
+  },
+  {
+    "review_id": 1013,
+    "source_platform": "tiktok",
+    "review_date": "2024-01-20",
+    "content": "ราคาแรงอยู่เด้อออ แต่นานๆ กินทีโอเค",
+    "results": {
+      "price": { "sentiment": "negative", "confidence": 0.65 },
+      "taste": { "sentiment": "positive", "confidence": 0.55 }
+    }
+  },
+  {
+    "review_id": 1014,
+    "source_platform": "facebook",
+    "review_date": "2024-01-21",
+    "content": "โปรโมชั่นซับซ้อน สรุปไม่ได้ลดจริง",
+    "results": {
+      "price": { "sentiment": "negative", "confidence": 0.80 }
+    }
+  },
+  {
+    "review_id": 1015,
+    "source_platform": "shopee",
+    "review_date": "2024-01-22",
+    "content": "สั่งมา 2 ได้มา 1 รบกวนตรวจสอบด้วย",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1016,
+    "source_platform": "google",
+    "review_date": "2024-01-22",
+    "content": "พนักงานบริการดีมาก ยิ้มแย้มแจ่มใส ประทับใจค่ะ",
+    "results": {
+      "service": { "sentiment": "positive", "confidence": 0.97 }
+    }
+  },
+  {
+    "review_id": 1017,
+    "source_platform": "tiktok",
+    "review_date": "2024-01-23",
+    "content": "ร้านลับที่แท้ทรู ทางเข้าหายากไปนิดแต่อร่อย",
+    "results": {
+      "accessibility": { "sentiment": "negative", "confidence": 0.70 },
+      "taste": { "sentiment": "positive", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1018,
+    "source_platform": "youtube",
+    "review_date": "2024-01-23",
+    "content": "เทียบกับเจ้าอื่นแล้ว อันนี้คุ้มกว่า ให้เยอะ",
+    "results": {
+      "price": { "sentiment": "positive", "confidence": 0.85 }
+    }
+  },
+  {
+    "review_id": 1019,
+    "source_platform": "facebook",
+    "review_date": "2024-01-24",
+    "content": "รอคิว 2 ชั่วโมง ไม่ไหวจริงๆ ขอบาย",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.93 }
+    }
+  },
+  {
+    "review_id": 1020,
+    "source_platform": "shopee",
+    "review_date": "2024-01-25",
+    "content": "ใช้ดีบอกต่อ ซื้อซ้ำรอบที่ 3 แล้ว",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.96 }
+    }
+  },
+  {
+    "review_id": 1021,
+    "source_platform": "google",
+    "review_date": "2024-01-25",
+    "content": "อาหารออกช้ามาก โต๊ะข้างๆ มาทีหลังได้ก่อน",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.91 }
+    }
+  },
+  {
+    "review_id": 1022,
+    "source_platform": "tiktok",
+    "review_date": "2024-01-26",
+    "content": "น้ำจิ้มคือที่สุด! ต้องลอง",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1023,
+    "source_platform": "shopee",
+    "review_date": "2024-01-26",
+    "content": "ราคาถูกแต่ค่าส่งแพง สรุปเท่าเดิม",
+    "results": {
+      "price": { "sentiment": "neutral", "confidence": 0.60 }
+    }
+  },
+  {
+    "review_id": 1024,
+    "source_platform": "facebook",
+    "review_date": "2024-01-27",
+    "content": "มีแมลงวันในร้าน ดูไม่ค่อยสะอาดเท่าไหร่",
+    "results": {
+      "atmosphere": { "sentiment": "negative", "confidence": 0.80 }
+    }
+  },
+  {
+    "review_id": 1025,
+    "source_platform": "google",
+    "review_date": "2024-01-27",
+    "content": "รสชาติมาตรฐาน ไม่แย่แต่ก็ไม่ได้ว้าว",
+    "results": {
+      "taste": { "sentiment": "neutral", "confidence": 0.70 }
+    }
+  },
+  {
+    "review_id": 1026,
+    "source_platform": "youtube",
+    "review_date": "2024-01-28",
+    "content": "เมนูหลากหลายดีครับ เหมาะกับพาครอบครัวมา",
+    "results": {
+      "atmosphere": { "sentiment": "positive", "confidence": 0.80 }
+    }
+  },
+  {
+    "review_id": 1027,
+    "source_platform": "tiktok",
+    "review_date": "2024-01-28",
+    "content": "เพลงเสียงดังไปหน่อย คุยกันไม่ค่อยรู้เรื่อง",
+    "results": {
+      "atmosphere": { "sentiment": "negative", "confidence": 0.85 }
+    }
+  },
+  {
+    "review_id": 1028,
+    "source_platform": "shopee",
+    "review_date": "2024-01-29",
+    "content": "ของหมดอายุ ส่งมาได้ไง แย่มาก",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1029,
+    "source_platform": "google",
+    "review_date": "2024-01-29",
+    "content": "ห้องน้ำสะอาด สะดวกสบาย",
+    "results": {
+      "atmosphere": { "sentiment": "positive", "confidence": 0.90 },
+      "accessibility": { "sentiment": "positive", "confidence": 0.85 }
+    }
+  },
+  {
+    "review_id": 1030,
+    "source_platform": "facebook",
+    "review_date": "2024-01-30",
+    "content": "เค้กอร่อยมาก เนื้อนุ่ม ไม่หวานเกินไป",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.96 }
+    }
+  },
+  {
+    "review_id": 1031,
+    "source_platform": "tiktok",
+    "review_date": "2024-01-30",
+    "content": "พนักงานเสิร์ฟหล่อบอกต่อด้วย 😍 บริการดีสุดๆ",
+    "results": {
+      "service": { "sentiment": "positive", "confidence": 0.98 }
+    }
+  },
+  {
+    "review_id": 1032,
+    "source_platform": "shopee",
+    "review_date": "2024-01-31",
+    "content": "แพ็คเกจจิ้งสวย ซื้อเป็นของขวัญได้เลย",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.92 }
+    }
+  },
+  {
+    "review_id": 1033,
+    "source_platform": "google",
+    "review_date": "2024-02-01",
+    "content": "ไกลบ้านไปหน่อย ถ้าร้านอยู่ใกล้คงมาบ่อยๆ",
+    "results": {
+      "accessibility": { "sentiment": "neutral", "confidence": 0.60 }
+    }
+  },
+  {
+    "review_id": 1034,
+    "source_platform": "youtube",
+    "review_date": "2024-02-01",
+    "content": "วัตถุดิบเกรดพรีเมียม สมราคาครับ",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.90 },
+      "price": { "sentiment": "positive", "confidence": 0.80 }
+    }
+  },
+  {
+    "review_id": 1035,
+    "source_platform": "facebook",
+    "review_date": "2024-02-02",
+    "content": "สั่งออนไลน์ระบบล่มบ่อยมาก หงุดหงิด",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.88 }
+    }
+  },
+  {
+    "review_id": 1036,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-02",
+    "content": "วิวหลักล้าน อาหารหลักร้อย คุ้มมม",
+    "results": {
+      "price": { "sentiment": "positive", "confidence": 0.90 },
+      "atmosphere": { "sentiment": "positive", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1037,
+    "source_platform": "shopee",
+    "review_date": "2024-02-03",
+    "content": "ขนส่งทำกล่องบุบ แต่ร้านห่อบับเบิ้ลมาหนา ของเลยรอด",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.70 }
+    }
+  },
+  {
+    "review_id": 1038,
+    "source_platform": "google",
+    "review_date": "2024-02-03",
+    "content": "เมนูภาษาอังกฤษล้วน อ่านยากสำหรับผู้ใหญ่",
+    "results": {
+      "accessibility": { "sentiment": "negative", "confidence": 0.80 }
+    }
+  },
+  {
+    "review_id": 1039,
+    "source_platform": "facebook",
+    "review_date": "2024-02-04",
+    "content": "รสชาติเพี้ยนไปจากเดิม เมื่อก่อนอร่อยกว่านี้",
+    "results": {
+      "taste": { "sentiment": "negative", "confidence": 0.85 }
+    }
+  },
+  {
+    "review_id": 1040,
+    "source_platform": "youtube",
+    "review_date": "2024-02-04",
+    "content": "ใครสายเนื้อต้องมาร้านนี้ เนื้อดีมากกก",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1041,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-05",
+    "content": "ร้านน่ารักมากกก มุมถ่ายรูปเพียบ",
+    "results": {
+      "atmosphere": { "sentiment": "positive", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1042,
+    "source_platform": "shopee",
+    "review_date": "2024-02-05",
+    "content": "ได้ส่วนลดตอน 2.2 คุ้มมากกกก",
+    "results": {
+      "price": { "sentiment": "positive", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1043,
+    "source_platform": "google",
+    "review_date": "2024-02-06",
+    "content": "พนักงานไม่สนใจลูกค้าเลย ยืนเล่นโทรศัพท์",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.92 }
+    }
+  },
+  {
+    "review_id": 1044,
+    "source_platform": "facebook",
+    "review_date": "2024-02-06",
+    "content": "น้ำซุปเค็มไปนิด แต่เป็ดย่างอร่อย",
+    "results": {
+      "taste": { "sentiment": "neutral", "confidence": 0.65 }
+    }
+  },
+  {
+    "review_id": 1045,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-07",
+    "content": "รอคิวไม่นานอย่างที่คิด บริการจัดการดี",
+    "results": {
+      "service": { "sentiment": "positive", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1046,
+    "source_platform": "youtube",
+    "review_date": "2024-02-07",
+    "content": "ปริมาณน้อยลงแต่ราคาเท่าเดิม เสียความรู้สึก",
+    "results": {
+      "price": { "sentiment": "negative", "confidence": 0.85 }
+    }
+  },
+  {
+    "review_id": 1047,
+    "source_platform": "shopee",
+    "review_date": "2024-02-08",
+    "content": "กลิ่นหอมทะลุกล่อง ชอบมากค่ะ",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.96 }
+    }
+  },
+  {
+    "review_id": 1048,
+    "source_platform": "google",
+    "review_date": "2024-02-08",
+    "content": "ร้านสะอาด น่านั่ง แอร์เย็นฉ่ำ",
+    "results": {
+      "atmosphere": { "sentiment": "positive", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1049,
+    "source_platform": "facebook",
+    "review_date": "2024-02-09",
+    "content": "จองโต๊ะไปแล้วแต่ไปถึงไม่มีโต๊ะ งงมาก",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.98 }
+    }
+  },
+  {
+    "review_id": 1050,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-09",
+    "content": "อร่อยบอกต่อ! เต็ม 10 ไม่หัก",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.99 }
+    }
+  },
+  {
+    "review_id": 1051,
+    "source_platform": "facebook",
+    "review_date": "2024-02-10",
+    "content": "สั่งผ่านแอปฯ รออาหารนานเกือบชั่วโมง โมโหหิว",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1052,
+    "source_platform": "google",
+    "review_date": "2024-02-10",
+    "content": "ทำเลดีมาก ติดรถไฟฟ้า เดินทางสะดวกสุดๆ",
+    "results": {
+      "accessibility": { "sentiment": "positive", "confidence": 0.98 }
+    }
+  },
+  {
+    "review_id": 1053,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-11",
+    "content": "ตามรีวิวมาครับ ผิดหวังนิดหน่อย รสชาติหวานนำไปเยอะ",
+    "results": {
+      "taste": { "sentiment": "negative", "confidence": 0.85 }
+    }
+  },
+  {
+    "review_id": 1054,
+    "source_platform": "shopee",
+    "review_date": "2024-02-11",
+    "content": "ค่าส่งแพงกว่าค่าของอีก ไม่คุ้มเลย",
+    "results": {
+      "price": { "sentiment": "negative", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1055,
+    "source_platform": "youtube",
+    "review_date": "2024-02-12",
+    "content": "บุฟเฟต์หัวละ 299 คือดีย์ กุ้งสดมาก",
+    "results": {
+      "price": { "sentiment": "positive", "confidence": 0.92 },
+      "taste": { "sentiment": "positive", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1056,
+    "source_platform": "facebook",
+    "review_date": "2024-02-12",
+    "content": "โต๊ะแคบไปหน่อย นั่งเบียดกันไม่ค่อยสบาย",
+    "results": {
+      "atmosphere": { "sentiment": "negative", "confidence": 0.80 }
+    }
+  },
+  {
+    "review_id": 1057,
+    "source_platform": "google",
+    "review_date": "2024-02-13",
+    "content": "ทางลาดสำหรับวีลแชร์ชันมาก เข็นลำบากครับ",
+    "results": {
+      "accessibility": { "sentiment": "negative", "confidence": 0.92 }
+    }
+  },
+  {
+    "review_id": 1058,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-13",
+    "content": "พี่พนักงานเต้นโชว์ด้วย เอนเตอร์เทนเก่งมาก 555",
+    "results": {
+      "service": { "sentiment": "positive", "confidence": 0.96 }
+    }
+  },
+  {
+    "review_id": 1059,
+    "source_platform": "shopee",
+    "review_date": "2024-02-14",
+    "content": "แพ็คกันกระแทกมาหนาแน่น สินค้าปลอดภัยหายห่วง",
+    "results": {
+      "service": { "sentiment": "positive", "confidence": 0.94 }
+    }
+  },
+  {
+    "review_id": 1060,
+    "source_platform": "youtube",
+    "review_date": "2024-02-14",
+    "content": "ร้านสวยตะโกน! ถ่ายรูปได้ทุกมุม แสงสวยมาก",
+    "results": {
+      "atmosphere": { "sentiment": "positive", "confidence": 0.99 }
+    }
+  },
+  {
+    "review_id": 1061,
+    "source_platform": "facebook",
+    "review_date": "2024-02-15",
+    "content": "กาแฟจืดจางมาก เหมือนกินน้ำล้างแก้ว",
+    "results": {
+      "taste": { "sentiment": "negative", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1062,
+    "source_platform": "google",
+    "review_date": "2024-02-15",
+    "content": "ราคาขึ้นจากปีที่แล้วเยอะมาก คงไม่มาบ่อยๆ",
+    "results": {
+      "price": { "sentiment": "negative", "confidence": 0.88 }
+    }
+  },
+  {
+    "review_id": 1063,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-16",
+    "content": "เมนูลับที่คนไม่ค่อยรู้ อร่อยแสงออกตาต้องลอง",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.97 }
+    }
+  },
+  {
+    "review_id": 1064,
+    "source_platform": "shopee",
+    "review_date": "2024-02-16",
+    "content": "แอดมินเหวี่ยงมาก ถามดีๆ ตอบกวนประสาท",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1065,
+    "source_platform": "youtube",
+    "review_date": "2024-02-17",
+    "content": "ที่จอดรถกว้างขวาง รองรับได้หลายคัน สะดวกดี",
+    "results": {
+      "accessibility": { "sentiment": "positive", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1066,
+    "source_platform": "facebook",
+    "review_date": "2024-02-17",
+    "content": "เสียงดังจอแจมาก ไม่เหมาะกับมานั่งทำงาน",
+    "results": {
+      "atmosphere": { "sentiment": "negative", "confidence": 0.85 }
+    }
+  },
+  {
+    "review_id": 1067,
+    "source_platform": "google",
+    "review_date": "2024-02-18",
+    "content": "ข้าวแข็งไปหน่อย แต่น้ำแกงอร่อยให้อภัยได้",
+    "results": {
+      "taste": { "sentiment": "neutral", "confidence": 0.65 }
+    }
+  },
+  {
+    "review_id": 1068,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-18",
+    "content": "ถูกและดีมีอยู่จริง! จานละ 40 บาท ให้เยอะจุกๆ",
+    "results": {
+      "price": { "sentiment": "positive", "confidence": 0.98 }
+    }
+  },
+  {
+    "review_id": 1069,
+    "source_platform": "shopee",
+    "review_date": "2024-02-19",
+    "content": "ส่งช้ามากกกก สั่งชาตินี้ได้กินชาติหน้า",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.92 }
+    }
+  },
+  {
+    "review_id": 1070,
+    "source_platform": "youtube",
+    "review_date": "2024-02-19",
+    "content": "ร้านหายากนิดนึง ป้ายไม่ชัด ขับเลยไปสองรอบ",
+    "results": {
+      "accessibility": { "sentiment": "negative", "confidence": 0.85 }
+    }
+  },
+  {
+    "review_id": 1071,
+    "source_platform": "facebook",
+    "review_date": "2024-02-20",
+    "content": "เค็ม! เค็มแบบไตสะเทือน ปรุงหนักมือไปนะ",
+    "results": {
+      "taste": { "sentiment": "negative", "confidence": 0.96 }
+    }
+  },
+  {
+    "review_id": 1072,
+    "source_platform": "google",
+    "review_date": "2024-02-20",
+    "content": "วิวแม่น้ำตอนพระอาทิตย์ตกคือที่สุด โรแมนติกมาก",
+    "results": {
+      "atmosphere": { "sentiment": "positive", "confidence": 0.98 }
+    }
+  },
+  {
+    "review_id": 1073,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-21",
+    "content": "พนักงานน่ารัก แนะนำเมนูเก่ง ยิ้มแย้มตลอด",
+    "results": {
+      "service": { "sentiment": "positive", "confidence": 0.94 }
+    }
+  },
+  {
+    "review_id": 1074,
+    "source_platform": "shopee",
+    "review_date": "2024-02-21",
+    "content": "คุณภาพตามราคา ไม่ได้คาดหวังอะไรมาก ก็โอเค",
+    "results": {
+      "price": { "sentiment": "neutral", "confidence": 0.70 },
+      "taste": { "sentiment": "neutral", "confidence": 0.60 }
+    }
+  },
+  {
+    "review_id": 1075,
+    "source_platform": "youtube",
+    "review_date": "2024-02-22",
+    "content": "ไม่มีที่จอดรถ ต้องไปจอดแปะข้างทาง เสียวโดนล็อคล้อ",
+    "results": {
+      "accessibility": { "sentiment": "negative", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1076,
+    "source_platform": "facebook",
+    "review_date": "2024-02-22",
+    "content": "สเต็กเนื้อเหนียวมาก เคี้ยวจนปวดกราม",
+    "results": {
+      "taste": { "sentiment": "negative", "confidence": 0.93 }
+    }
+  },
+  {
+    "review_id": 1077,
+    "source_platform": "google",
+    "review_date": "2024-02-23",
+    "content": "ร้านตกแต่งสไตล์วินเทจ ของสะสมเยอะ ดูเพลินดี",
+    "results": {
+      "atmosphere": { "sentiment": "positive", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1078,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-23",
+    "content": "โปร 1 แถม 1 คุ้มตะโกน หารกับเพื่อนตกคนละไม่กี่บาท",
+    "results": {
+      "price": { "sentiment": "positive", "confidence": 0.97 }
+    }
+  },
+  {
+    "review_id": 1079,
+    "source_platform": "shopee",
+    "review_date": "2024-02-24",
+    "content": "ส่งผิดสี ทักแชทไปก็ไม่อ่าน แย่ๆ",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1080,
+    "source_platform": "youtube",
+    "review_date": "2024-02-24",
+    "content": "รสชาติกลมกล่อม หอมเครื่องเทศ ถูกปากคนไทย",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.92 }
+    }
+  },
+  {
+    "review_id": 1081,
+    "source_platform": "facebook",
+    "review_date": "2024-02-25",
+    "content": "แอร์ไม่เย็นเลย ร้อนจนเหงื่อแตก กินไปเช็ดเหงื่อไป",
+    "results": {
+      "atmosphere": { "sentiment": "negative", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1082,
+    "source_platform": "google",
+    "review_date": "2024-02-25",
+    "content": "ลิฟต์เสีย ต้องเดินขึ้นบันได 3 ชั้น เหนื่อยมาก",
+    "results": {
+      "accessibility": { "sentiment": "negative", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1083,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-26",
+    "content": "เสิร์ฟผิดโต๊ะ แล้วยังมาเถียงลูกค้าอีก งง",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.92 }
+    }
+  },
+  {
+    "review_id": 1084,
+    "source_platform": "shopee",
+    "review_date": "2024-02-26",
+    "content": "ราคาถือว่ากลางๆ ไม่ถูกไม่แพง รับได้ครับ",
+    "results": {
+      "price": { "sentiment": "neutral", "confidence": 0.60 }
+    }
+  },
+  {
+    "review_id": 1085,
+    "source_platform": "youtube",
+    "review_date": "2024-02-27",
+    "content": "ซาซิมิสดหวานฉ่ำ ไม่คาวเลย คุณภาพดีมาก",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.96 }
+    }
+  },
+  {
+    "review_id": 1086,
+    "source_platform": "facebook",
+    "review_date": "2024-02-27",
+    "content": "เก้าอี้แข็งนั่งไม่สบายเลย ปวดหลัง",
+    "results": {
+      "atmosphere": { "sentiment": "negative", "confidence": 0.75 }
+    }
+  },
+  {
+    "review_id": 1087,
+    "source_platform": "google",
+    "review_date": "2024-02-28",
+    "content": "ทางเข้าแคบมาก รถสวนกันลำบาก มือใหม่ควรระวัง",
+    "results": {
+      "accessibility": { "sentiment": "negative", "confidence": 0.88 }
+    }
+  },
+  {
+    "review_id": 1088,
+    "source_platform": "tiktok",
+    "review_date": "2024-02-28",
+    "content": "เจ้าของร้านใจดี แถมขนมให้ชิมด้วย น่ารัก",
+    "results": {
+      "service": { "sentiment": "positive", "confidence": 0.93 }
+    }
+  },
+  {
+    "review_id": 1089,
+    "source_platform": "shopee",
+    "review_date": "2024-02-29",
+    "content": "Flash Sale เหลือ 9 บาท คุ้มยิ่งกว่าคุ้ม",
+    "results": {
+      "price": { "sentiment": "positive", "confidence": 0.99 }
+    }
+  },
+  {
+    "review_id": 1090,
+    "source_platform": "youtube",
+    "review_date": "2024-02-29",
+    "content": "มันบดเนื้อเนียนนุ่ม ละลายในปาก ฟินนน",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.94 }
+    }
+  },
+  {
+    "review_id": 1091,
+    "source_platform": "facebook",
+    "review_date": "2024-03-01",
+    "content": "กลิ่นในร้านเหม็นอับ เหมือนไม่ได้ทำความสะอาด",
+    "results": {
+      "atmosphere": { "sentiment": "negative", "confidence": 0.92 }
+    }
+  },
+  {
+    "review_id": 1092,
+    "source_platform": "google",
+    "review_date": "2024-03-01",
+    "content": "เรียกพนักงานยากมาก ต้องเดินไปตามเอง",
+    "results": {
+      "service": { "sentiment": "negative", "confidence": 0.85 }
+    }
+  },
+  {
+    "review_id": 1093,
+    "source_platform": "tiktok",
+    "review_date": "2024-03-02",
+    "content": "มาวันธรรมดาคนน้อย ชิลมาก ไม่วุ่นวาย",
+    "results": {
+      "atmosphere": { "sentiment": "positive", "confidence": 0.85 },
+      "accessibility": { "sentiment": "positive", "confidence": 0.80 }
+    }
+  },
+  {
+    "review_id": 1094,
+    "source_platform": "shopee",
+    "review_date": "2024-03-02",
+    "content": "สินค้าดูแพงเกินจริง วัสดุก๊องแก๊งมาก",
+    "results": {
+      "price": { "sentiment": "negative", "confidence": 0.85 }
+    }
+  },
+  {
+    "review_id": 1095,
+    "source_platform": "youtube",
+    "review_date": "2024-03-03",
+    "content": "รสชาติกลางๆ พอกินได้ ไม่ได้แย่แต่ก็ไม่ซ้ำ",
+    "results": {
+      "taste": { "sentiment": "neutral", "confidence": 0.60 }
+    }
+  },
+  {
+    "review_id": 1096,
+    "source_platform": "facebook",
+    "review_date": "2024-03-03",
+    "content": "ห้องน้ำอยู่ไกลมาก ต้องเดินไปหลังร้าน มืดด้วย",
+    "results": {
+      "accessibility": { "sentiment": "negative", "confidence": 0.85 },
+      "atmosphere": { "sentiment": "negative", "confidence": 0.70 }
+    }
+  },
+  {
+    "review_id": 1097,
+    "source_platform": "google",
+    "review_date": "2024-03-04",
+    "content": "ราคาเป็นมิตร นักเรียนนักศึกษาเอื้อมถึง",
+    "results": {
+      "price": { "sentiment": "positive", "confidence": 0.90 }
+    }
+  },
+  {
+    "review_id": 1098,
+    "source_platform": "tiktok",
+    "review_date": "2024-03-04",
+    "content": "เชฟออกมาทักทายลูกค้าเองเลย เป็นกันเองมาก",
+    "results": {
+      "service": { "sentiment": "positive", "confidence": 0.95 }
+    }
+  },
+  {
+    "review_id": 1099,
+    "source_platform": "shopee",
+    "review_date": "2024-03-05",
+    "content": "ใส่โค้ดลดเพิ่มไปอีก ประหยัดไปได้เยอะ",
+    "results": {
+      "price": { "sentiment": "positive", "confidence": 0.92 }
+    }
+  },
+  {
+    "review_id": 1100,
+    "source_platform": "youtube",
+    "review_date": "2024-03-05",
+    "content": "หมูสะเต๊ะน้ำจิ้มเด็ดมาก เข้มข้นถึงเครื่อง",
+    "results": {
+      "taste": { "sentiment": "positive", "confidence": 0.97 }
+    }
+  }
+]

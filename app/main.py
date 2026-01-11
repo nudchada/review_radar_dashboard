@@ -3,14 +3,15 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Any
 import os
+import json
 import random
 from datetime import datetime
 
 app = FastAPI(
     title="ReviewRadar API",
-    description="API for Sentiment Analysis Dashboard & QC",
+    description="API for Sentiment Analysis Dashboard & QC System",
     version="1.0.0"
 )
 
@@ -20,16 +21,26 @@ app.mount("/static", StaticFiles(directory=os.path.join(base_dir, "static")), na
 templates = Jinja2Templates(directory=os.path.join(base_dir, "templates"))
 
 
+# --- Helper Function: Load Mock Data ---
+def load_mock_json(filename: str):
+    """โหลดไฟล์ JSON จากโฟลเดอร์ mock_data"""
+    file_path = os.path.join(base_dir, "mock_data", filename)
+    if not os.path.exists(file_path):
+        return None
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
 # ==========================================
-# 0. PYDANTIC MODELS (SCHEMAS)
+# 0. PYDANTIC MODELS (Schemas)
 # ==========================================
+# ... (ส่วน Models เหมือนเดิม ไม่ต้องแก้) ...
 
 # --- Common Models ---
 class DateRange(BaseModel):
     start: Optional[str]
     end: Optional[str]
 
-# --- 1. Metrics Models ---
 class AppliedFilters(BaseModel):
     platforms: List[str]
     date_range: DateRange
@@ -53,14 +64,12 @@ class SentimentCount(BaseModel):
 class MetricsData(BaseModel):
     platform_counts: PlatformCounts
     overall_sentiment: SentimentCount
-    # Key = Aspect Name (e.g., "TASTE"), Value = Counts
     aspect_metrics: Dict[str, SentimentCount] 
 
 class MetricsResponse(BaseModel):
     meta: MetricsMeta
     data: MetricsData
 
-# --- 2. Reviews Models ---
 class ReviewResultDetail(BaseModel):
     sentiment: str
     confidence: float
@@ -70,7 +79,6 @@ class ReviewItem(BaseModel):
     source_platform: str
     review_date: str
     content: str
-    # Key = Aspect (e.g. "scent", "price"), Value = Sentiment Detail
     results: Dict[str, ReviewResultDetail] 
 
 class ReviewMeta(BaseModel):
@@ -82,7 +90,6 @@ class ReviewsResponse(BaseModel):
     meta: ReviewMeta
     data: List[ReviewItem]
 
-# --- 3. QC Session Models ---
 class QCBreakdown(BaseModel):
     low_confidence_count: int
     random_audit_count: int
@@ -97,7 +104,6 @@ class QCSessionResponse(BaseModel):
     message: str
     data: QCData
 
-# --- 4. QC Items Models ---
 class QCProgress(BaseModel):
     total: int
     reviewed: int
@@ -122,7 +128,6 @@ class QCItemsResponse(BaseModel):
     meta: QCMeta
     items: List[QCItem]
 
-# --- 5. QC Update Models ---
 class QCItemUpdatePayload(BaseModel):
     correct_sentiment: Optional[str] = None
     confirmed: int
@@ -146,15 +151,20 @@ class QCUpdateResponse(BaseModel):
 async def read_dashboard(request: Request):
     return templates.TemplateResponse("dashboard.html", {"request": request})
 
-# 1.1 GET Metrics
+# --- 1.1 GET Metrics ---
 @app.get("/api/batches/{batch_id}/metrics", response_model=MetricsResponse)
 async def get_batch_metrics(
     batch_id: str,
-    platforms: Optional[str] = Query(None, description="Comma separated platforms"),
+    platforms: Optional[str] = Query(None),
     from_date: Optional[str] = None,
     to_date: Optional[str] = None
 ):
     platform_list = platforms.split(",") if platforms else []
+    metrics_data = load_mock_json("metrics.json")
+    if not metrics_data:
+        metrics_data = {
+            "platform_counts": {}, "overall_sentiment": {"positive":0,"negative":0,"neutral":0}, "aspect_metrics": {}
+        }
 
     return {
         "meta": {
@@ -163,25 +173,10 @@ async def get_batch_metrics(
                 "date_range": {"start": from_date, "end": to_date}
             }
         },
-        "data": {
-            "platform_counts": {
-                "youtube": 1204, "facebook": 724, "instagram": 300,
-                "tiktok": 2500, "google": 600, "shopee": 500
-            },
-            "overall_sentiment": {
-                "positive": 1024, "negative": 290, "neutral": 105,
-            },
-            "aspect_metrics": {
-                "TASTE": { "positive": 80, "negative": 10, "neutral": 1 },
-                "PRICE": { "positive": 60, "negative": 20, "neutral": 0 },
-                "SERVICE": { "positive": 90, "negative": 5, "neutral": 1 },
-                "ATMOSPHERE": { "positive": 8, "negative": 0, "neutral": 2 },
-                "ACCESSIBILITY": { "positive": 4, "negative": 0, "neutral": 1 }
-            }
-        }
+        "data": metrics_data
     }
 
-# 1.2 GET Reviews
+# --- 1.2 GET Reviews ---
 @app.get("/api/batches/{batch_id}/reviews", response_model=ReviewsResponse)
 async def get_batch_reviews(
     batch_id: str,
@@ -189,49 +184,11 @@ async def get_batch_reviews(
     limit: int = 10,
     platform: Optional[str] = None
 ):
-    mock_reviews_pool = [
-        {
-            "review_id": 1054, "source_platform": "shopee", "review_date": "2024-01-15",
-            "content": "ซื้อให้แม่ แม่ชอบกลิ่นมากแต่บอกว่าขวดเล็กไปหน่อย",
-            "results": {
-                "scent": { "sentiment": "positive", "confidence": 0.98 }, 
-                "price": { "sentiment": "neutral", "confidence": 0.50 }
-            }
-        },
-        {
-            "review_id": 882, "source_platform": "facebook", "review_date": "2024-01-14",
-            "content": "ส่งของแย่มาก กล่องบุบหมดเลย",
-            "results": {
-                "service": { "sentiment": "negative", "confidence": 0.99 },
-                "packaging": { "sentiment": "negative", "confidence": 0.95 }
-            }
-        },
-        {
-            "review_id": 309, "source_platform": "google", "review_date": "2024-01-10",
-            "content": "คุณภาพดีเยี่ยม! คุ้มราคา",
-            "results": {
-                "quality": { "sentiment": "positive", "confidence": 0.92 },
-                "price": { "sentiment": "positive", "confidence": 0.90 }
-            }
-        },
-        {
-            "review_id": 401, "source_platform": "tiktok", "review_date": "2024-01-11",
-            "content": "เฉยๆ นะ ไม่ได้ว้าวมาก",
-            "results": {
-                "taste": { "sentiment": "neutral", "confidence": 0.60 }
-            }
-        },
-        {
-            "review_id": 505, "source_platform": "youtube", "review_date": "2024-01-12",
-            "content": "แพงไปหน่อยแต่อร่อยจริง",
-            "results": {
-                "price": { "sentiment": "negative", "confidence": 0.70 },
-                "taste": { "sentiment": "positive", "confidence": 0.95 }
-            }
-        }
-    ]
+    all_reviews = load_mock_json("reviews.json")
+    if not all_reviews:
+        all_reviews = []
 
-    filtered = mock_reviews_pool
+    filtered = all_reviews
     if platform and platform != 'all':
         filtered = [r for r in filtered if r['source_platform'] == platform]
 
@@ -246,54 +203,71 @@ async def get_batch_reviews(
         "data": selected_reviews
     }
 
-# 2.1 POST QC Session
+# --- 2.1 POST QC Session ---
 @app.post("/api/batches/{batch_id}/qc-sessions", status_code=201, response_model=QCSessionResponse)
 async def create_qc_session(batch_id: str):
+    # ในความเป็นจริง ต้องไป Query DB มาคำนวณ
+    # แต่นี้ Mock เราเลย hardcode ตัวเลข breakdown ไว้ก่อน
     return {
         "message": "QC Session generated successfully",
         "data": {
             "session_id": 55,
-            "total_items": 50,
-            "breakdown": { "low_confidence_count": 40, "random_audit_count": 10 },
+            "total_items": 54, # แก้ให้ตรงกับจำนวน Mock data ที่เรามี
+            "breakdown": { "low_confidence_count": 44, "random_audit_count": 10 },
             "created_at": datetime.now().isoformat() + "Z"
         }
     }
 
-# 2.2 GET QC Session Items
+
+# --- 2.2 GET QC Session Items (UPDATED) ---
 @app.get("/api/qc-sessions/{session_id}", response_model=QCItemsResponse)
 async def get_qc_session_items(session_id: int):
-    mock_qc_items = [
-        {
-            "qc_item_id": 1042, "review_id": 9981,
-            "review_content": "รสชาติพอไปวัดไปวาได้ แต่ราคานี่ไม่ไหวเลย",
-            "aspect": "price", "predicted_sentiment": "neutral",
-            "confidence": 0.44, "sentiment_gap": 0.10, "status": "pending",
-        },
-        {
-            "qc_item_id": 1043, "review_id": 9981,
-            "review_content": "รสชาติพอไปวัดไปวาได้ แต่ราคานี่ไม่ไหวเลย",
-            "aspect": "taste", "predicted_sentiment": "positive",
-            "confidence": 0.95, "sentiment_gap": 0.80, "status": "pending"
-        }
-    ]
+    # 1. โหลดข้อมูลจากไฟล์ JSON จริง
+    qc_items = load_mock_json("qc_items.json")
+    if not qc_items:
+        qc_items = []
+        
+    # 2. คำนวณ Progress แบบ Dynamic
+    total = len(qc_items)
+    reviewed_count = len([i for i in qc_items if i.get('status') == 'reviewed'])
+    remaining = total - reviewed_count
+
     return {
         "meta": {
             "session_id": session_id,
             "batch_name": "KFC_Competitor_Analysis_Q1",
-            "progress": { "total": 50, "reviewed": 12, "remaining": 38 }
+            "progress": { 
+                "total": total, 
+                "reviewed": reviewed_count, 
+                "remaining": remaining 
+            }
         },
-        "items": mock_qc_items
+        "items": qc_items
     }
 
-# 2.3 PATCH QC Item
+
+# --- 2.3 PATCH QC Item (UPDATED LOGIC) ---
 @app.patch("/api/qc-items/{qc_item_id}", response_model=QCUpdateResponse)
 async def update_qc_item(qc_item_id: int, payload: QCItemUpdatePayload):
-    final_sentiment = payload.correct_sentiment if payload.correct_sentiment else "original_prediction"
+    # 1. โหลดข้อมูลเพื่อหาตัวเดิม (Optional: ใน Mockup อาจจะไม่โหลดก็ได้)
+    qc_items = load_mock_json("qc_items.json")
     
-    # Mock logic
-    mock_original_prediction = "neutral" if qc_item_id == 1042 else "positive"
-    if final_sentiment == "original_prediction":
-        final_sentiment = mock_original_prediction
+    # 2. หา Item (Mock Logic)
+    target_item = next((item for item in qc_items if item["qc_item_id"] == qc_item_id), None)
+    
+    # 3. Determine final sentiment
+    final_sentiment = payload.correct_sentiment
+    if not final_sentiment:
+         # ถ้าไม่ส่งค่าแก้มา ให้ใช้ค่าเดิมจาก Prediction (ถ้าหาเจอ)
+         if target_item:
+             final_sentiment = target_item["predicted_sentiment"]
+         else:
+             final_sentiment = "neutral" # Fallback
+
+    # Note: ใน Mockup นี้เราจะไม่ save ทับไฟล์ JSON จริงๆ เพราะอาจจะทำให้ไฟล์พังได้ง่าย
+    # เราจะแค่ Return Success กลับไปให้ Frontend อัปเดต UI
+
+    print(f"Mock DB: QC Item {qc_item_id} updated -> Status: Reviewed, Sentiment: {final_sentiment}")
 
     return {
         "success": True,
