@@ -152,6 +152,10 @@ class QCUpdateResponse(BaseModel):
 async def read_dashboard(request: Request):
     return templates.TemplateResponse("dashboard.html", {"request": request})
 
+@app.get("/qc", response_class=HTMLResponse)
+async def read_qc_dashboard(request: Request):
+    return templates.TemplateResponse("qc.html", {"request": request})
+
 # --- 1.1 GET Metrics ---
 @app.get("/api/batches/{batch_id}/metrics", response_model=MetricsResponse)
 async def get_batch_metrics(
